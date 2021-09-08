@@ -1,5 +1,18 @@
-.home{
-	align-items: center;
+.home {
+	padding: 100px;
 	background-color: white;
-    height: 100vh;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	.loading {
+		margin: 45%;
+	}
+}
+
+@media (max-width: 425px) {
+	.home {
+		height: 80%;
+	}
 }
