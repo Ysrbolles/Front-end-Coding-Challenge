@@ -1,6 +1,11 @@
-# Getting Started with Create React App
+# frontend-coding-challenge 🤞🤞
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with Create React App. It lists the most stared github repositories for the last month, with infinite loading on scroll.
+
+- Used [Axios](https://github.com/axios/axios#features) for Data Fetching
+It basically a Promise based HTTP client for making Http request.
+
+- And [react-infinite-scroll-component](https://www.npmjs.com/package/react-infinite-scroll-component) to implement the Infinite scroll.
 
 ## Available Scripts
 

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react"
 import { Spin } from "antd"
-import "../assets/scss/Home.scss"
-import GithubRepoCard from "./GithubRepoCard"
-import GithubRepos from "../services/GithubRepos"
+import "../../assets/scss/Home.scss"
+import GithubRepoCard from "../cards/GithubRepoCard"
+import GithubRepos from "../../services/GithubRepos"
 import InfiniteScroll from "react-infinite-scroll-component"
-import Heading from "../components/Heading"
+import Heading from "../cards/Heading"
 
 const Home = () => {
 	const [pageNumber, setPageNumber] = useState(1)

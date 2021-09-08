@@ -1,6 +1,6 @@
 import { StarOutlined, IssuesCloseOutlined } from "@ant-design/icons"
 import moment from "moment"
-import "../assets/scss/GithubRepoCard.scss"
+import "../../assets/scss/GithubRepoCard.scss"
 
 
 const GithubRepoCard = (props) => {
