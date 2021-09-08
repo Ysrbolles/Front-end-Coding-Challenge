@@ -11,7 +11,12 @@ const GithubRepos = {
 				.then(res => {
 					res?.status === 200 && resolve(res?.data)
 				})
-				.catch(err => reject(err))
+				.catch(err => {
+					if (err.response.status === 403) {
+						const res = err.response.data;
+						reject(res)
+					} else reject(err);
+				})
 		})
 	},
 	//Generate the start date to get Github repositories created in the last 30 days
