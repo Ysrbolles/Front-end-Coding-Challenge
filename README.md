@@ -1,6 +1,7 @@
 # frontend-coding-challenge 🤞🤞
 
-This project was bootstrapped with Create React App. It lists the most stared github repositories for the last month, with infinite loading on scroll.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+It lists the most stared github repositories for the last month, with infinite loading on scroll.
 
 - Used [Axios](https://github.com/axios/axios#features) for Data Fetching
 It basically a Promise based HTTP client for making Http request.
@@ -22,7 +23,7 @@ It basically a Promise based HTTP client for making Http request.
 ## Built With
 
 <a href="https://reactjs.org/" target="_blank">
-    <img width="150" height='90' src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.webrexstudio.com%2Fwhy-react-js-is-here-to-stay%2F&psig=AOvVaw3W_ThBKuGsuvuCe75aCEXh&ust=1631199763599000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCOi04-bS7_ICFQAAAAAdAAAAABAD">
+    <img width="150" height='90' src="https://onextrapixel.com/wp-content/uploads/2016/04/reactjs-thumb.jpg">
 </a>
 
 <a href="https://ant.design/" target="_blank">
