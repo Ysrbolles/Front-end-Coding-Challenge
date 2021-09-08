@@ -1,5 +1,9 @@
 # frontend-coding-challenge 🤞🤞
 
+## Idea of the App
+The task is to implement a small webapp that will list the most starred Github repos that were created in the last 30 days.
+You'll be fetching the sorted JSON data directly from the Github API (Github API explained down below).
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 It lists the most stared github repositories for the last month, with infinite loading on scroll.
 
