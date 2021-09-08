@@ -1,33 +1,36 @@
-import react from "react"
 import { StarOutlined, IssuesCloseOutlined } from "@ant-design/icons"
 import moment from "moment"
 import "../assets/scss/GithubRepoCard.scss"
 
 
 const GithubRepoCard = (props) => {
-	//Get Repo Info from Props
-	const {Title, Descreption, Avatar, StarsNumber, IssuesNumber, Created_At} = props
+	//Get Repos Infos from Props
+	const { Item } = props
+	
+	const Optmize = (total) => {
+		if (total >= 1000)
+			total = (total / 1000).toFixed(1).toString() + "K";
+		return total;
+	}
 
 	return (
 		<div className="card">
 			<div className="thumb">
-				<img
-					src="https://images.unsplash.com/photo-1631034602548-63326fd3764b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1535&q=80"
-				/>
+				<img src={Item?.owner?.avatar_url} alt={Item?.gravatar_id} />
 			</div>
 			<div className="infos">
-				<div className="Title">Lorem, ipsum</div>
-				<div className="desc">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.</div>
+				<div className="Title">{Item?.name}</div>
+				<div className="desc">{Item?.description}</div>
 				<div className="action">
 					<div className="details">
-						<StarOutlined /> Stars: 110k
+						<StarOutlined /> Stars: {Optmize(Item?.stargazers_count)}
 					</div>
 					<div className="details">
-						<IssuesCloseOutlined /> Issues: 60k
+						<IssuesCloseOutlined /> Issues: {Optmize(Item?.open_issues_count)}
 					</div>
 					<div className="datesection">
 						<div className="date">
-							Submitted {moment().fromNow()} by likwaaak
+							Submitted {moment(Item?.created_at).fromNow()} by {Item?.owner?.login}
 						</div>
 					</div>
 				</div>

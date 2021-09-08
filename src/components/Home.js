@@ -1,15 +1,57 @@
-import react from "react"
+import React, { useEffect, useState } from "react"
 import { Spin } from "antd"
 import "../assets/scss/Home.scss"
 import GithubRepoCard from "./GithubRepoCard"
+import GithubRepos from "../services/GithubRepos"
+import InfiniteScroll from "react-infinite-scroll-component"
+import Heading from "../components/Heading"
 
 const Home = () => {
+	const [pageNumber, setPageNumber] = useState(1)
+	const [result, setResult] = useState([])
 
-	
+
+	useEffect(() => {
+		getGithubRepos()
+		// eslint-disable-next-line
+	}, [pageNumber])
+
+	//Get Github Repos first time
+	const getGithubRepos = () => {
+		GithubRepos.getGithubRepos(pageNumber)
+			.then(res => {
+				res?.items?.length && setResult([...result, ...res?.items])
+			})
+			.catch(err => console.log(err))
+	}
+
+	const getNextPage = () => {
+		setPageNumber(pageNumber + 1)
+	}
+
 	return (
 		<div className="home">
-			{/* <Spin className="loading"/> */}
-			<GithubRepoCard />
+			<div className="head">
+				<Heading color="primary" text="Most followed Github repositories created in the last 30 days" />
+			</div>
+			{!result?.length ? <Spin className="loading" /> :
+				<div className="content">
+					<InfiniteScroll
+						dataLength={result?.length}
+						next={getNextPage}
+						loader={<Spin style={{ marginTop: "20px" }} />}
+						scrollableTarget="sessions"
+						scrollThreshold={1}
+						hasMore={true}
+					>
+						{result?.map((item) => {
+							return (<GithubRepoCard Item={item} key={item?.id} />)
+						})}
+					</InfiniteScroll>
+				</div>
+			}
+
+
 		</div>
 	)
 }
