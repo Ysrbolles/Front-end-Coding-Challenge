@@ -3,6 +3,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 It lists the most stared github repositories for the last month, with infinite loading on scroll.
 
+- Used [Antd](https://ant.design/docs/react/introduce) for styling the interface.
+ 
 - Used [Axios](https://github.com/axios/axios#features) for Data Fetching
 It basically a Promise based HTTP client for making Http request.
 
